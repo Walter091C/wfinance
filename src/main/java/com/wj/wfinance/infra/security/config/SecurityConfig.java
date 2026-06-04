@@ -1,5 +1,6 @@
-package com.wj.wfinance.security.config;
+package com.wj.wfinance.infra.security.config;
 
+import com.wj.wfinance.infra.security.SecurityFilter;
 import jakarta.servlet.DispatcherType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -36,7 +37,7 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
                                                                 .dispatcherTypeMatchers(DispatcherType.ERROR).permitAll()
-                                                                .requestMatchers(HttpMethod.POST, "/auth/login", "/auth/register").permitAll()
+                                                                .requestMatchers(HttpMethod.POST, "/user/auth/login", "/user/register").permitAll()
                                                                 .requestMatchers(
                                                                         "/swagger-ui/**",
                                                                         "/v3/api-docs/**"

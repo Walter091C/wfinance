@@ -1,4 +1,4 @@
-package com.wj.wfinance.security.config.api;
+package com.wj.wfinance.presentation.api;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;

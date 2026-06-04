@@ -1,10 +1,11 @@
-package com.wj.wfinance.security.config;
+package com.wj.wfinance.infra.security.config;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.wj.wfinance.security.entity.User;
+import com.wj.wfinance.infra.persistence.entity.UserEntity;
+import com.wj.wfinance.infra.security.JWTUserData;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
@@ -15,12 +16,12 @@ public class TokenConfig {
 
     private String secretKey = "secret";
 
-    public String generateToken(User user) {
+    public String generateToken(UserEntity userEntity) {
 
         Algorithm algorithm = Algorithm.HMAC256(secretKey);
         return JWT.create()
-                .withSubject(user.getEmail())
-                .withClaim("id", user.getId())
+                .withSubject(userEntity.getEmail())
+                .withClaim("id", userEntity.getId())
                 .withExpiresAt(Instant.now().plusSeconds(86400))
                 .withIssuedAt(Instant.now())
                 .sign(algorithm);

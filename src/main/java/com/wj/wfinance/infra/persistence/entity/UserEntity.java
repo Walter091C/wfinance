@@ -1,4 +1,4 @@
-package com.wj.wfinance.security.entity;
+package com.wj.wfinance.infra.persistence.entity;
 
 import com.wj.wfinance.utils.persistence.BaseEntity;
 import jakarta.persistence.*;
@@ -18,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "users")
-public class User extends BaseEntity implements UserDetails {
+public class UserEntity extends BaseEntity implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

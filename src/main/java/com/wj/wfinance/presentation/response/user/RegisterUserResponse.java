@@ -1,4 +1,4 @@
-package com.wj.wfinance.security.dto.response;
+package com.wj.wfinance.presentation.response.user;
 
 public record RegisterUserResponse(String name, String email) {
 }

@@ -1,4 +1,4 @@
-package com.wj.wfinance.security.controller;
+package com.wj.wfinance.presentation.controller;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.web.bind.annotation.GetMapping;

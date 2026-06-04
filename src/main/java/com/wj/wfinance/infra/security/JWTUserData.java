@@ -1,4 +1,4 @@
-package com.wj.wfinance.security.config;
+package com.wj.wfinance.infra.security;
 
 import lombok.Builder;
 

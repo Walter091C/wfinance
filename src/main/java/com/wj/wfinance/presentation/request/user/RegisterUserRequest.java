@@ -1,4 +1,4 @@
-package com.wj.wfinance.security.dto.request;
+package com.wj.wfinance.presentation.request.user;
 
 import jakarta.validation.constraints.NotEmpty;
 
