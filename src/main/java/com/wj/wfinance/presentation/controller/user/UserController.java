@@ -8,6 +8,12 @@ import com.wj.wfinance.presentation.request.user.LoginRequest;
 import com.wj.wfinance.presentation.request.user.RegisterUserRequest;
 import com.wj.wfinance.presentation.response.user.LoginResponse;
 import com.wj.wfinance.presentation.response.user.RegisterUserResponse;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")
+@Tag(name = "User", description = "Operações de Login e Registro de Usuário")
 public class UserController {
 
     private final RegisterLoginUseCase registerLoginUseCase;
@@ -37,6 +44,22 @@ public class UserController {
     }
 
     @PostMapping("/auth/login")
+    @Operation(
+            summary = "Login with user credentials",
+            description = "Authenticates the user and returns a JWT token if the credentials are valid"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Login successful",
+                    content = @Content(schema = @Schema(implementation = LoginResponse.class))),
+            @ApiResponse(responseCode = "400", description = "Invalid Data Provided",
+                    content = @Content),
+            @ApiResponse(responseCode = "404", description = "Resource not found",
+                    content = @Content),
+            @ApiResponse(responseCode = "409", description = "User already exists",
+                    content = @Content),
+            @ApiResponse(responseCode = "500", description = "Internal server error",
+                    content = @Content)
+    })
     public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest request){
         UsernamePasswordAuthenticationToken usernamePass = new UsernamePasswordAuthenticationToken(request.email(), request.password());
         Authentication authentication = authenticationManager.authenticate(usernamePass);
@@ -48,6 +71,22 @@ public class UserController {
     }
 
     @PostMapping("/register")
+    @Operation(
+            summary = "Register new User",
+            description = "Creates a new user in the system"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "User created successfully",
+                    content = @Content(schema = @Schema(implementation = RegisterUserResponse.class))),
+            @ApiResponse(responseCode = "400", description = "Invalid Data Provided",
+                    content = @Content),
+            @ApiResponse(responseCode = "404", description = "Resource not found",
+                    content = @Content),
+            @ApiResponse(responseCode = "409", description = "User already exists",
+                    content = @Content),
+            @ApiResponse(responseCode = "500", description = "Internal server error",
+                    content = @Content)
+    })
     public ResponseEntity<RegisterUserResponse> register(@Valid @RequestBody RegisterUserRequest request){
         User newUser = new User(null, request.name(), request.email(), passwordEncoder.encode(request.password()));
 

@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @OpenAPIDefinition(
         info = @Info(
-                title = "WFinance API",
-                version = "1.0",
-                description = "API de controle financeiro"
+                title = "W Finance API´s",
+                version = "0.0.1",
+                description = "API Criada para gerenciamento de todas as finanças. Sua rede bancária, sua gestão e seus invesimentos em um só lugar."
         )
 )
 @SecurityScheme(

@@ -1,15 +1,11 @@
 package com.wj.wfinance.domain.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public sealed class User permits AccountHolder {
 
     private Long id;
     private String name;
