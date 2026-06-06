@@ -1,4 +1,4 @@
-package com.wj.wfinance.domain.entity;
+package com.wj.wfinance.domain.entity.account;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

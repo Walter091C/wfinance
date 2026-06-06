@@ -1,9 +1,8 @@
-package com.wj.wfinance.infra.persistence.mapper;
+package com.wj.wfinance.infra.persistence.mapper.user;
 
 import com.wj.wfinance.domain.entity.User;
-import com.wj.wfinance.infra.persistence.entity.UserEntity;
+import com.wj.wfinance.infra.persistence.entity.user.UserEntity;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface UserEntitiyMapper {

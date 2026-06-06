@@ -43,3 +43,11 @@ CREATE TABLE account (
         REFERENCES account_holder (id)
         ON DELETE CASCADE
 );
+
+CREATE TABLE product_catalog (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

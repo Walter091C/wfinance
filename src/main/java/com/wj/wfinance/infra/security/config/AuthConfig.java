@@ -1,6 +1,6 @@
 package com.wj.wfinance.infra.security.config;
 
-import com.wj.wfinance.infra.persistence.repository.UserJpaRepository;
+import com.wj.wfinance.infra.persistence.repository.user.UserJpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

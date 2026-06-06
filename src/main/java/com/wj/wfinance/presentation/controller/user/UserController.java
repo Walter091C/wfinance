@@ -2,7 +2,7 @@ package com.wj.wfinance.presentation.controller.user;
 
 import com.wj.wfinance.application.useCase.user.RegisterLoginUseCase;
 import com.wj.wfinance.domain.entity.User;
-import com.wj.wfinance.infra.persistence.entity.UserEntity;
+import com.wj.wfinance.infra.persistence.entity.user.UserEntity;
 import com.wj.wfinance.infra.security.config.TokenConfig;
 import com.wj.wfinance.presentation.request.user.LoginRequest;
 import com.wj.wfinance.presentation.request.user.RegisterUserRequest;

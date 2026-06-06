@@ -1,4 +1,4 @@
-package com.wj.wfinance.infra.persistence.entity;
+package com.wj.wfinance.infra.persistence.entity.user;
 
 import com.wj.wfinance.utils.persistence.BaseEntity;
 import jakarta.persistence.*;

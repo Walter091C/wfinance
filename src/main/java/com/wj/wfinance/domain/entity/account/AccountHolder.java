@@ -1,14 +1,15 @@
-package com.wj.wfinance.domain.entity;
+package com.wj.wfinance.domain.entity.account;
 
-import com.wj.wfinance.domain.entity.account.Account;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public final class AccountHolder extends User {
+public final class AccountHolder {
 
     private int userId;
     private Adress address;

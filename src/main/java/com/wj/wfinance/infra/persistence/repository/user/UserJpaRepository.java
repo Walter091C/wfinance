@@ -1,6 +1,6 @@
-package com.wj.wfinance.infra.persistence.repository;
+package com.wj.wfinance.infra.persistence.repository.user;
 
-import com.wj.wfinance.infra.persistence.entity.UserEntity;
+import com.wj.wfinance.infra.persistence.entity.user.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 

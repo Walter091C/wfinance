@@ -1,8 +1,6 @@
 package com.wj.wfinance.infra.persistence.entity.account;
 
-import com.wj.wfinance.domain.entity.Adress;
-import com.wj.wfinance.domain.entity.account.Account;
-import com.wj.wfinance.infra.persistence.entity.UserEntity;
+import com.wj.wfinance.infra.persistence.entity.user.UserEntity;
 import com.wj.wfinance.utils.persistence.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
