@@ -4,6 +4,16 @@ CREATE TABLE account_holder (
     user_id INT NOT NULL UNIQUE,
     cpf VARCHAR(11) UNIQUE,
     rg VARCHAR(20),
+
+    -- ADDRESS (Embeddable)
+    street VARCHAR(255),
+    number VARCHAR(20),
+    complement VARCHAR(255),
+    neighborhood VARCHAR(255),
+    city VARCHAR(255),
+    uf VARCHAR(2),
+    cep VARCHAR(8),
+
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 

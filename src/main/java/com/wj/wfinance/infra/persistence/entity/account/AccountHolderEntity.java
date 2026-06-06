@@ -25,7 +25,9 @@ public class AccountHolderEntity extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Adress address;
+    @Embedded
+    private AddressEmbeddable address;
+
     private String phoneNumber;
     private String cpf;
     private String rg;
