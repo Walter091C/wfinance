@@ -10,6 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 public final class AccountHolder extends User {
 
+    private int userId;
     private Adress address;
     private String phoneNumber;
     private String cpf;

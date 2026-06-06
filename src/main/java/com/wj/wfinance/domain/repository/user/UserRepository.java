@@ -1,4 +1,4 @@
-package com.wj.wfinance.domain.repository;
+package com.wj.wfinance.domain.repository.user;
 
 import com.wj.wfinance.domain.entity.User;
 

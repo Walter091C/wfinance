@@ -1,7 +1,7 @@
 package com.wj.wfinance.application.useCase.user;
 
 import com.wj.wfinance.domain.entity.User;
-import com.wj.wfinance.domain.repository.UserRepository;
+import com.wj.wfinance.domain.repository.user.UserRepository;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 

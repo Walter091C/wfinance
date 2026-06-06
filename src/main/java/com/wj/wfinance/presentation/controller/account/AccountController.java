@@ -1,5 +1,8 @@
 package com.wj.wfinance.presentation.controller.account;
 
+import com.wj.wfinance.application.useCase.account.CreateAccountUseCase;
+import com.wj.wfinance.domain.entity.account.Account;
+import com.wj.wfinance.domain.enums.AccountTypeEnum;
 import com.wj.wfinance.presentation.request.account.CreateAccountRequest;
 import com.wj.wfinance.presentation.response.account.AccountResponse;
 import com.wj.wfinance.presentation.response.account.ListAccountsResponse;
@@ -13,6 +16,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -20,6 +25,12 @@ import java.util.List;
 @SecurityRequirement(name = "bearerAuth")
 @Tag(name = "Account", description = "Operações relacionadas a contas bancárias, incluindo criação, consulta, atualização e exclusão de contas.")
 public class AccountController {
+
+    private final CreateAccountUseCase createAccountUseCase;
+
+    public AccountController(CreateAccountUseCase createAccountUseCase) {
+        this.createAccountUseCase = createAccountUseCase;
+    }
 
     @PostMapping("/create")
     @Operation(
@@ -39,6 +50,7 @@ public class AccountController {
                     content = @Content)
     })
     public ResponseEntity<AccountResponse> createAccount(CreateAccountRequest request) {
+        createAccountUseCase.createAccount(new Account(null, request.accountNumber(), request.branch(), request.checkDigit(), AccountTypeEnum.valueOf(request.accountType()), BigDecimal.ZERO, true, LocalDate.now(), null));
         return ResponseEntity.ok(new AccountResponse(null, request.accountNumber(), request.branch(), request.checkDigit(), request.accountType(), null, true, null));
     }
 

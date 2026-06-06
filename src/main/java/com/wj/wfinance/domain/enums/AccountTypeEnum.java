@@ -1,6 +1,6 @@
 package com.wj.wfinance.domain.enums;
 
-public enum AccountType {
+public enum AccountTypeEnum {
 
     CORRENTE(0, "Corrente"),
     POUPANCA(1, "Poupança");
@@ -8,7 +8,7 @@ public enum AccountType {
     private final int codigo;
     private final String descricao;
 
-    AccountType(int codigo, String descricao) {
+    AccountTypeEnum(int codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
     }

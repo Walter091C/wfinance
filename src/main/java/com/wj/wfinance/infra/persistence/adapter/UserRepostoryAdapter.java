@@ -1,7 +1,7 @@
 package com.wj.wfinance.infra.persistence.adapter;
 
 import com.wj.wfinance.domain.entity.User;
-import com.wj.wfinance.domain.repository.UserRepository;
+import com.wj.wfinance.domain.repository.user.UserRepository;
 import com.wj.wfinance.infra.persistence.mapper.UserEntitiyMapper;
 import com.wj.wfinance.infra.persistence.repository.UserJpaRepository;
 import org.springframework.stereotype.Repository;
